@@ -3,16 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Countdown</title>
+    <title>Abel & Allen's Wedding Countdown</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #e0f7fa; }
-        h1 { color: #2c3e50; }
-        #timer { font-size: 2em; color: #e74c3c; margin-top: 20px; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .card {
+            background: white;
+            width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #d7a68f 0%, rgba(215, 166, 143, 0) 70%);
+            opacity: 0.5;
+            z-index: 0;
+        }
+        .card::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #d7a68f 0%, rgba(215, 166, 143, 0) 70%);
+            opacity: 0.5;
+            z-index: 0;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+        #timer {
+            font-size: 1.5em;
+            color: #e74c3c;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
-    <h1>Countdown to Abel & Allen's Wedding</h1>
-    <div id="timer"></div>
+    <div class="card">
+        <h1>Countdown to Abel & Allen's Wedding</h1>
+        <div id="timer"></div>
+    </div>
 
     <script>
         // Set the target date and time (Sunday, 27 July 2025, 6:00 PM EAT)
